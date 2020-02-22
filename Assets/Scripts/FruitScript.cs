@@ -11,14 +11,14 @@ public class FruitScript : MonoBehaviour
 	public bool isBomb = false;
 
 	MouseSlice mouseSlice;
-	Rigidbody2D rigidbody;
+	Rigidbody2D selfRigidbody;
 
 	void Start() {
 		mouseSlice = GameObject.Find("Camera").GetComponent<MouseSlice>();
-		rigidbody = GetComponent<Rigidbody2D>();
+		selfRigidbody = GetComponent<Rigidbody2D>();
 
-		rigidbody.AddForce((Vector3.up * Random.Range(500f, 575f)) + (Vector3.right * Random.Range(-125f, 125f)));
-		rigidbody.AddTorque(Random.Range(-30f, 30f));
+		selfRigidbody.AddForce((Vector3.up * Random.Range(500f, 575f)) + (Vector3.right * Random.Range(-125f, 125f)));
+		selfRigidbody.AddTorque(Random.Range(-30f, 30f));
 	}
 
 	void OnMouseEnter() {

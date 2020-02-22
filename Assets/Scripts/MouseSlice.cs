@@ -31,14 +31,19 @@ public class MouseSlice : MonoBehaviour
 			GameObject sliceLine = Instantiate(sliceLineObject, Vector3.zero, Quaternion.identity);
 			sliceLine.GetComponent<SliceLineAnim>().setPos(posA, posB);
 
-			RaycastHit2D hit = Physics2D.Raycast(posA, posB - posA, Vector2.Distance(posA, posB));
-			if (hit.collider != null) {
-				if (hit.collider.tag == "Fruit") {
-					hit.collider.gameObject.GetComponent<FruitScript>().slice(posA, posB);
-				}
-			}
+			castSliceRaycast();
 		} else if (Input.GetMouseButtonUp(0) && isClicking && isOverFruit > 0) {
 			isClicking = false;
+		}
+	}
+
+	void castSliceRaycast() {
+		RaycastHit2D hit = Physics2D.Raycast(posA, posB - posA, Vector2.Distance(posA, posB));
+		if (hit.collider != null) {
+			if (hit.collider.tag == "Fruit") {
+				hit.collider.gameObject.GetComponent<FruitScript>().slice(posA, posB);
+				castSliceRaycast();
+			}
 		}
 	}
 }
