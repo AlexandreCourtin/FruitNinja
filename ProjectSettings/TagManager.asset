@@ -39,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BombOne
+    uniqueID: 3509099625
+    locked: 0
+  - name: BombTwo
+    uniqueID: 1432507593
+    locked: 0
   - name: AnanasOne
     uniqueID: 3604481125
     locked: 0

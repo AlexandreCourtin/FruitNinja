@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FruitScript : MonoBehaviour
 {
 	public GameObject slicePartOne;
 	public GameObject slicePartTwo;
 	public GameObject pointText;
+	public bool isBomb = false;
 
 	MouseSlice mouseSlice;
 	Rigidbody2D rigidbody;
@@ -28,7 +30,6 @@ public class FruitScript : MonoBehaviour
 	}
 
 	public void slice(Vector3 posA, Vector3 posB) {
-		Instantiate(pointText, transform.position, Quaternion.identity);
 		GameObject partOne = Instantiate(slicePartOne, transform.position, transform.rotation);
 		GameObject partTwo = Instantiate(slicePartTwo, transform.position, transform.rotation);
 		Transform partOneTransform = partOne.transform.Find("TransparencyMask");
@@ -45,7 +46,13 @@ public class FruitScript : MonoBehaviour
 		partTwo.GetComponent<Rigidbody2D>().AddForce(-partTwoTransform.right * 200f);
 
 		ScoreScript scoreScript = GameObject.Find("ScoreText").GetComponent<ScoreScript>();
-		scoreScript.score += 1;
+		GameObject point = Instantiate(pointText, transform.position, Quaternion.identity);
+		if (isBomb) {
+			scoreScript.score -= 1;
+			point.GetComponentInChildren<TextMesh>().text = "-1";
+		} else {
+			scoreScript.score += 1;
+		}
 		scoreScript.updateUI();
 		Destroy(gameObject);
 	}
