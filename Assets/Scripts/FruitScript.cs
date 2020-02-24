@@ -50,13 +50,13 @@ public class FruitScript : MonoBehaviour
 		ScoreScript scoreScript = GameObject.Find("ScoreText").GetComponent<ScoreScript>();
 		GameObject point = Instantiate(pointText, transform.position, Quaternion.identity);
 		if (isBomb) {
-			scoreScript.score -= 1;
+			scoreScript.addScore(-1);
 			point.GetComponentInChildren<TextMesh>().text = "-1";
+			cameraShake.shake(true);
 		} else {
-			scoreScript.score += 1;
+			scoreScript.addScore(1);
+			cameraShake.shake(false);
 		}
-		scoreScript.updateUI();
-		cameraShake.shake();
 		Destroy(gameObject);
 	}
 }
