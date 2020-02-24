@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6035868931330554333}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: TransparencyMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6035868931363665583}
   - component: {fileID: 6035868931363665576}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6035868931953207164}
   - component: {fileID: 6035868931953207165}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: fruits_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 8285003775502289691}
   - component: {fileID: 1339407395456018816}
   - component: {fileID: 4266671124282449772}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: BombOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}

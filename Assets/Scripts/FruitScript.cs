@@ -11,10 +11,12 @@ public class FruitScript : MonoBehaviour
 	public bool isBomb = false;
 
 	MouseSlice mouseSlice;
+	CameraShake cameraShake;
 	Rigidbody2D selfRigidbody;
 
 	void Start() {
 		mouseSlice = GameObject.Find("Camera").GetComponent<MouseSlice>();
+		cameraShake = GameObject.Find("Camera").GetComponent<CameraShake>();
 		selfRigidbody = GetComponent<Rigidbody2D>();
 
 		selfRigidbody.AddForce((Vector3.up * Random.Range(500f, 575f)) + (Vector3.right * Random.Range(-125f, 125f)));
@@ -54,6 +56,7 @@ public class FruitScript : MonoBehaviour
 			scoreScript.score += 1;
 		}
 		scoreScript.updateUI();
+		cameraShake.shake();
 		Destroy(gameObject);
 	}
 }

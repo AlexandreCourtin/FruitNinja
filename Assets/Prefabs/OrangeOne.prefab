@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3800484321485842164}
   - component: {fileID: 3800484321485842165}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: fruits_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1551350996610599571}
   - component: {fileID: 8496948237932308488}
   - component: {fileID: 6650686637476699876}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: OrangeOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3800484321974810709}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: TransparencyMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3800484322075916071}
   - component: {fileID: 3800484322075916064}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}

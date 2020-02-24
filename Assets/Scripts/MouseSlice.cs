@@ -7,14 +7,19 @@ public class MouseSlice : MonoBehaviour
 {
 	public GameObject sliceLineObject;
 
-	public bool isClicking;
+	public bool isSlicing;
 	public int isOverFruit;
+	public float clickTimer;
 	public Vector3 posA;
 	public Vector3 posB;
 
+	float FirstClickTimer;
+
 	void Start() {
-		isClicking = false;
+		isSlicing = false;
 		isOverFruit = 0;
+		clickTimer = 0f;
+		FirstClickTimer = 0f;
 	}
 
 	void Update() {
@@ -22,18 +27,16 @@ public class MouseSlice : MonoBehaviour
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
-		if (Input.GetMouseButtonDown(0) && !isClicking && isOverFruit <= 0) {
-			isClicking = true;
+		if (Input.GetMouseButtonDown(0) && !isSlicing) {
+			isSlicing = true;
 			posA = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		} else if (Input.GetMouseButtonUp(0) && isClicking && isOverFruit <= 0) {
-			isClicking = false;
+			FirstClickTimer = Time.time;
+		} else if (isSlicing && Time.time - FirstClickTimer >= .1f) {
+			isSlicing = false;
 			posB = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			GameObject sliceLine = Instantiate(sliceLineObject, Vector3.zero, Quaternion.identity);
 			sliceLine.GetComponent<SliceLineAnim>().setPos(posA, posB);
-
 			castSliceRaycast();
-		} else if (Input.GetMouseButtonUp(0) && isClicking && isOverFruit > 0) {
-			isClicking = false;
 		}
 	}
 

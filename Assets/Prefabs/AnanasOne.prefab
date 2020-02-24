@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2652008473452211688}
   - component: {fileID: 2652008473452211695}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2652008473545974426}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: TransparencyMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 429067362463584348}
   - component: {fileID: 7320850347128353479}
   - component: {fileID: 5492183449916343339}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: AnanasOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2652008474001390651}
   - component: {fileID: 2652008474001390650}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: fruits_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

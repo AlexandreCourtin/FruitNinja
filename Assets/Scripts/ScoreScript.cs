@@ -12,6 +12,6 @@ public class ScoreScript : MonoBehaviour
 	}
 
 	public void updateUI() {
-		GetComponent<Text>().text = "Score: " + score;
+		GetComponent<TextMesh>().text = "Score: " + score;
 	}
 }
