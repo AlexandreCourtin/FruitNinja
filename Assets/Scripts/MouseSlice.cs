@@ -9,17 +9,17 @@ public class MouseSlice : MonoBehaviour
 
 	public bool isSlicing;
 	public int isOverFruit;
-	public float clickTimer;
 	public Vector3 posA;
 	public Vector3 posB;
 
-	float FirstClickTimer;
+	float clickTimer;
+
+	float clickTimerLimit = .15f;
 
 	void Start() {
 		isSlicing = false;
 		isOverFruit = 0;
 		clickTimer = 0f;
-		FirstClickTimer = 0f;
 	}
 
 	void Update() {
@@ -30,8 +30,8 @@ public class MouseSlice : MonoBehaviour
 		if (Input.GetMouseButtonDown(0) && !isSlicing) {
 			isSlicing = true;
 			posA = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			FirstClickTimer = Time.time;
-		} else if (isSlicing && Time.time - FirstClickTimer >= .1f) {
+			clickTimer = Time.time;
+		} else if (isSlicing && Time.time - clickTimer >= clickTimerLimit) {
 			isSlicing = false;
 			posB = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			GameObject sliceLine = Instantiate(sliceLineObject, Vector3.zero, Quaternion.identity);

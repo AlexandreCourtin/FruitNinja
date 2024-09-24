@@ -336,7 +336,6 @@ MonoBehaviour:
     type: 3}
   isSlicing: 0
   isOverFruit: 0
-  clickTimer: 0
   posA: {x: 0, y: 0, z: 0}
   posB: {x: 0, y: 0, z: 0}
 --- !u!114 &519420034
